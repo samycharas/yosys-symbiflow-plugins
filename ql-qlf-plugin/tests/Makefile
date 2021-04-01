@@ -1,10 +1,10 @@
-# The latch test is disabled as latches are not supported in the qlf_k4n8/qlf_k6n10.
 # The bram test will be enable in a future PR after it's been fixed.
 
 TESTS = dffs \
 	shreg \
 	iob_no_flatten \
 	full_adder \
+	latches \
 	logic
 
 include $(shell pwd)/../../Makefile_test.common

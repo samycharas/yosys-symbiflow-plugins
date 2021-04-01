@@ -222,7 +222,9 @@ struct SynthQuickLogicPass : public ScriptPass {
         if (check_label("map_ffs")) {
             std::string techMapArgs = " -map +/quicklogic/" + family + "_ffs_map.v";
             if (family == "qlf_k6n10") {
-                run("dfflegalize -cell $_DFF_P_ 0 -cell $_DFF_PP0_ 0 -cell $_SDFFE_PP0P_ 0 -cell $_DLATCH_PP0_ 0");
+                run("dfflegalize -cell $_DFF_P_ 0 -cell $_DFF_PP0_ 0 -cell $_DFFE_PP0P_ 0  -cell $_DLATCH_PP0_ 0");
+            //    In case we add clock inversion in the future.
+            //    run("dfflegalize -cell $_DFF_?_ 0 -cell $_DFF_?P0_ 0 -cell $_DFFE_?P0P_ 0  -cell $_DLATCH_PP0_ 0");
             } else {
                 run("dfflegalize -cell $_DFF_P_ 0 -cell $_DFF_P??_ 0 -cell $_DFF_N_ 0 -cell $_DFF_N??_ 0");
             }
